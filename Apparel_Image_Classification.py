@@ -56,6 +56,13 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42, test_
 classifier.fit(X_train,y_train,epochs=10,,validation_data=(X_test,y_test))
 
 
+y_pred = classifier.predict_classes(test_X)
+
+
+df=pd.DataFrame()
+df['label']= y_pred
+df.to_csv('submission.csv')
+
 
 
 
